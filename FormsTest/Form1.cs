@@ -19,6 +19,9 @@ namespace FormsTest
         {
             InitializeComponent();
 
+            LoadPictureBox2();
+
+
 #if (BOGUS)
             string filein = "c:\\Users\\David\\temp\\foo.jpg";
             string fileout = "c:\\Users\\David\\temp\\foo1.jpg";
@@ -35,6 +38,14 @@ namespace FormsTest
 
             int foo = 1;
 #endif
+        }
+
+        void LoadPictureBox2()
+        {
+            string filein = "c:\\Users\\DaveFindley\\temp\\test.jpg";
+            FileStream fs = new FileStream(filein, FileMode.Open, FileAccess.Read);
+            //Image image = Image.FromStream(fs);
+            //pictureBox2.Image = image;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,7 +88,8 @@ namespace FormsTest
             listBox1.Items.Add("item12");
 
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Load("c:\\Users\\David\\Temp\\foo.jpg");
+            pictureBox1.ImageLocation = "test.jpg";
+            pictureBox1.Load();
 
 
         }
