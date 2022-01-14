@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,8 @@ namespace FormsTest
         {
             InitializeComponent();
 
+            LoadPictureBox2();
+
 #if (BOGUS)
             string filein = "c:\\Users\\David\\temp\\foo.jpg";
             string fileout = "c:\\Users\\David\\temp\\foo1.jpg";
@@ -37,11 +40,20 @@ namespace FormsTest
 #endif
         }
 
+
+        void LoadPictureBox2()
+        {
+            string filein = "c:\\Users\\DaveFindley\\temp\\test.jpg";
+            FileStream fs = new FileStream(filein, FileMode.Open, FileAccess.Read);
+            //Image image = Image.FromStream(fs);
+            //pictureBox2.Image = image;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string comment = richTextBox1.Text;
             clsReadMetaData rdr = new clsReadMetaData();
-            string fileout = "c:\\Users\\David\\temp\\foo1.jpg";
+            string fileout = "c:\\Users\\DaveFindley\\temp\\foo1.jpg";
             rdr.SetComment(fileout, comment);
             richTextBox2.Text = rdr.GetComment(fileout);
         }
