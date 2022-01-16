@@ -43,10 +43,11 @@ namespace FormsTest
 
         void LoadPictureBox2()
         {
-            string filein = "c:\\Users\\DaveFindley\\temp\\test.jpg";
+            string filein = "c:\\temp\\testText.txt";
             FileStream fs = new FileStream(filein, FileMode.Open, FileAccess.Read);
             //Image image = Image.FromStream(fs);
             //pictureBox2.Image = image;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,8 +89,12 @@ namespace FormsTest
             listBox1.Items.Add("item11");
             listBox1.Items.Add("item12");
 
+            string filein = "c:\\temp\\testText.txt";
+            FileStream fs = new FileStream(filein, FileMode.Open, FileAccess.Read);
+
+
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Load("c:\\Users\\David\\Temp\\foo.jpg");
+            pictureBox1.Load("c:\\Users\\DaveFindley\\temp\\test.jpg");
 
 
         }
