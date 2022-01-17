@@ -43,7 +43,7 @@ namespace FormsTest
 
         void LoadPictureBox2()
         {
-            string filein = "c:\\temp\\testText.txt";
+            string filein = "c:\\temp\\test.jpg";
             FileStream fs = new FileStream(filein, FileMode.Open, FileAccess.Read);
             //Image image = Image.FromStream(fs);
             //pictureBox2.Image = image;
