@@ -43,9 +43,17 @@ namespace FormsTest
         void LoadPictureBox2()
         {
             string filein = "c:\\Users\\DaveFindley\\temp\\test.jpg";
-            FileStream fs = new FileStream(filein, FileMode.Open, FileAccess.Read);
-            //Image image = Image.FromStream(fs);
-            //pictureBox2.Image = image;
+            Image image = Image.FromFile(filein);
+            Image newImage = new Bitmap(image, 430, 460);
+            pictureBox2.Image = newImage;
+        }
+
+        public void ResizeImage(string fileName, int width, int height)
+        {
+            using (Image image = Image.FromFile(fileName))
+            {
+                new Bitmap(image, width, height).Save(fileName);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,7 +96,7 @@ namespace FormsTest
             listBox1.Items.Add("item12");
 
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.ImageLocation = "test.jpg";
+            pictureBox1.ImageLocation = "c:\\Users\\DaveFindley\\temp\\test.jpg";
             pictureBox1.Load();
 
 
